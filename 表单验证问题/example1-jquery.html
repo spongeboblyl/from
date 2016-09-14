@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<title>A Basic Example</title>
+<script type="text/javascript" src="jquery-2.2.3.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#myForm").submit(function(eventObj) {
+   		if ($("#textbox1").val() == "") {
+        	alert("Name is required.");
+        	eventObj.preventDefault();
+        	return false;
+    	} else {
+        	alert("Hello " + $("#textbox1").val());
+        	return true;
+    	}
+	});
+});
+</script>
+</head>
+<body>
+<p>A Basic Form Example</p>
+<form id="myForm" action="#">
+<p>Name <em>(Required)</em>: <input id="textbox1" name="textname" type="text" /></p>
+<p><input id="submitbutton1" type="submit" /></p>
+</form>
+</body>
+</html>
+
